@@ -41,6 +41,11 @@ export class IntroPage implements OnInit{
     ngOnInit(){
 
     }
+    ionViewDidEnter(){
+      console.log("Ya ingresé a la intro");
+      //Vamos a guardar en el Storage que ya se vio la Intro
+      }
+      
 }
 
   
