@@ -1,41 +1,22 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { Storage} from '@ionic/storage-angular';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-slides = [
-{
-  title: "Te damos la Bienvenida",
-  description: "El mejor lugar para actualizar tu dispositivo inteligente",
-  image: "../../assets/images/1.jfif",
-  help_text: "Para más información visitanos en <a> href= 'https://github.com/Samuel0821/Movil'> our docs </a>.",
-  class: "slide-1 red-title"
-},
-{
-  title: "Conoce más aquí",
-  description: "Te ofrecemos lo que estás buscando acomodándolo a tu bolsillo",
-  image: "../../assets/images/2.jfif",
-  help_text: "Para más información visitanos en <a> href= 'https://github.com/Samuel0821/Movil'> our docs </a>.",
-  class: "slide-2"
-},
-{
-  title: "Promosiones",
-  description: "Sorprende a tu ser querido con el 2x1 compra uno y lleva otro gratis.",
-  image: "../../assets/images/3.jfif",
-  help_text: "Para más información visitanos en <a> href= 'https://github.com/Samuel0821/Movil'> our docs </a>.",
-  class: "slide-3"
-},
-{
-  title: "A cerca de...",
-  image: "../../assets/images/1.jfif",
-  help_text: "Para más información visitanos en <a> href= 'https://github.com/Samuel0821/Movil'> our docs </a>.",
-  class: "slide-4"
-},
-    
-]
-  constructor() {}
 
+  constructor(
+    private router: Router,
+    private storage: Storage
+    ) {}
+
+  goToIntro(){
+  console.log("go to intro");
+  this.router.navigateByUrl('/intro')
+  this.storage.set('mostreLaIntro',true);
+  }
+  
 }
